@@ -11,6 +11,10 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+
+      fontFamily: {
+        arabic: ['"Amiri"', "serif"], // Or any Arabic-supporting font
+      },
     },
   },
   plugins: [],

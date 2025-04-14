@@ -1,0 +1,32 @@
+import Image from "next/image";
+
+export default function MedicalStatusCard() {
+  return (
+    <div className="max-w-md mx-auto mt-10 border border-[#EF4444] p-6 rounded-md text-center space-y-4">
+      <div className="flex flex-col mt-8 mb-6 gap-4">
+        <h2 className="text-black font-bold ">محمد مرشديل عالم</h2>
+        <h2 className="text-black font-bold ">MOHAMMAD MURSHEDUL ALAM</h2>
+        <div className="flex justify-between text-black font-bold">
+          <h3>Medical Status</h3>
+          <h3>الحالة الطبیة</h3>
+        </div>
+      </div>
+
+      {/* Status Box */}
+      <div className="border border-[#7A7A7A] text-[#61CE70] text-xl py-2 rounded-md">
+        FIT / لا ئق صحياً
+      </div>
+
+      {/* Certificate Stamp */}
+      <div className="mt-4">
+        <Image
+          width={200}
+          height={200}
+          src="/stamp.png"
+          alt="Certificate Approved"
+          className="mx-auto mt-8"
+        />
+      </div>
+    </div>
+  );
+}
