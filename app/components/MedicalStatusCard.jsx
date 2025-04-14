@@ -13,7 +13,7 @@ export default function MedicalStatusCard() {
       </div>
 
       {/* Status Box */}
-      <div className="border border-[#7A7A7A] text-[#61CE70] text-xl py-2 rounded-md">
+      <div className="border border-dashed border-[#7A7A7A] text-[#61CE70] text-xl py-2 ">
         FIT / لا ئق صحياً
       </div>
 
