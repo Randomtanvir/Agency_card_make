@@ -20,7 +20,7 @@ const ExpatriatesMedicalCertificate = (props) => {
 
   return (
     <>
-      <div className="max-w-md mb-3 border mx-auto overflow-hidden font-sans">
+      <div className="max-w-md mb-3 md:border mx-auto overflow-hidden font-sans">
         {/* Header */}
         <div className="bg-white p-2 relative">
           <div className="flex justify-between items-center">
@@ -70,9 +70,9 @@ const ExpatriatesMedicalCertificate = (props) => {
         <div className="h-1 mb-3 mt-6 bg-[#1ad1d1]"></div>
 
         {/* Certificate Content */}
-        <div className="bg-white p-4 space-y-3">
+        <div className="bg-white p-4 flex flex-col gap-3 space-y-3">
           {/* Application Type */}
-          <div className="border border-black mb-4 rounded-lg p-3">
+          <div className="border border-black  rounded-lg p-3">
             <div className="flex justify-between">
               <span className="font-bold text-gray-900">Application Type:</span>
               <span className="font-bold text-right" dir="rtl">
@@ -99,10 +99,8 @@ const ExpatriatesMedicalCertificate = (props) => {
               </span>
             </div>
           </div>
-          {/* Application Type end */}
-
           {/* Personal Information */}
-          <div className="border border-black rounded-md p-3">
+          <div className="border border-black  rounded-lg p-3">
             {/* Name */}
             <div className="flex justify-between">
               <span className="font-bold text-[15px] text-gray-900">Name:</span>
@@ -223,7 +221,8 @@ const ExpatriatesMedicalCertificate = (props) => {
               </span>
             </div>
           </div>
-          <div className="border mt-4  border-black rounded-md p-3">
+          {/* Expired Information */}
+          <div className="border border-black  rounded-lg p-3">
             <Field
               engName="Validity of the Medical"
               araName="صلاحية الفحص الطبي"
@@ -236,7 +235,9 @@ const ExpatriatesMedicalCertificate = (props) => {
               value="SUNRISE MEDICAL CENTER LLC"
             />
           </div>
-          <MedicalStatusCard />
+          <div>
+            <MedicalStatusCard />
+          </div>
         </div>
       </div>
       <p className="text-black text-[10px] mb-3 font-bold">Signature/Stamp</p>

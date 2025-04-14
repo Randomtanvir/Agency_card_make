@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function MedicalStatusCard() {
   return (
-    <div className="max-w-md mx-auto mt-10 border border-[#EF4444] p-6 rounded-md text-center space-y-4">
+    <div className="max-w-md mx-auto border-[2px] border-[#EF4444] p-6 rounded-md text-center space-y-4">
       <div className="flex flex-col mt-8 mb-6 gap-4">
         <h2 className="text-black font-bold ">محمد مرشديل عالم</h2>
         <h2 className="text-black font-bold ">MOHAMMAD MURSHEDUL ALAM</h2>
