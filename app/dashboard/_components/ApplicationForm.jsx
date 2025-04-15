@@ -1,6 +1,8 @@
 "use client";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 export default function ApplicationForm() {
+  const router = useRouter();
   const {
     register,
     handleSubmit,
@@ -34,6 +36,7 @@ export default function ApplicationForm() {
       if (res.ok) {
         const data = await res.json();
         alert("Application submitted successfully ✅");
+        router.push("/dashboard/lists");
       } else {
         alert("Failed to submit application ❌");
       }
