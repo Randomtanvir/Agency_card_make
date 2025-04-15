@@ -1,11 +1,11 @@
 import Image from "next/image";
 
-export default function MedicalStatusCard() {
+export default function MedicalStatusCard({ name }) {
   return (
     <div className="max-w-md mx-auto border-[2px] border-[#EF4444] p-6 rounded-md text-center space-y-4">
       <div className="flex flex-col mt-8 mb-6 gap-4">
         <h2 className="text-black font-bold ">محمد مرشديل عالم</h2>
-        <h2 className="text-black font-bold ">MOHAMMAD MURSHEDUL ALAM</h2>
+        <h2 className="text-black font-bold ">{name}</h2>
         <div className="flex justify-between text-black font-bold">
           <h3>Medical Status</h3>
           <h3>الحالة الطبیة</h3>

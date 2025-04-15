@@ -2,21 +2,25 @@ import Image from "next/image";
 import React from "react";
 import Field from "./Field";
 import MedicalStatusCard from "./MedicalStatusCard";
+import { formatDate } from "@/utils/dateFormate";
 
-const ExpatriatesMedicalCertificate = (props) => {
+const ExpatriatesMedicalCertificate = ({ certificateData }) => {
   // Using props instead of state
-  const certificateData = props.certificateData || {
-    applicationType: "FOR VISA & RESIDENCY PURPOSE - RENEWAL",
-    applicationNumber: "SCW14023524192",
-    name: "MOHAMMAD MURSHEDUL ALAM",
-    dateOfBirth: "20-01-1997",
-    nationality: "BANGLADESH",
-    gender: "MALE",
-    passportNo: "EM0565236",
-    civilNo: "130610975",
-    sponsor: "(415) شيخ الفتاح حل خطاط",
-    category: "SPONSOR RENEWAL - LABOUR & MUNICIPALITY HELTH CARD",
-  };
+  // const certificateData = props.certificateData || {
+  //   applicationType: "FOR VISA & RESIDENCY PURPOSE - RENEWAL",
+  //   applicationNumber: "SCW14023524192",
+  //   name: "MOHAMMAD MURSHEDUL ALAM",
+  //   dateOfBirth: "20-01-1997",
+  //   nationality: "BANGLADESH",
+  //   gender: "MALE",
+  //   passportNo: "EM0565236",
+  //   civilNo: "130610975",
+  //   sponsor: "(415) شيخ الفتاح حل خطاط",
+  //   category: "SPONSOR RENEWAL - LABOUR & MUNICIPALITY HELTH CARD",
+  //   ValidityoftheMedical: "13-04-2025",
+  //   to: "12-06-2025",
+  //   MedicalCenter: "SUNRISE MEDICAL CENTER LLC",
+  // };
 
   return (
     <>
@@ -125,7 +129,7 @@ const ExpatriatesMedicalCertificate = (props) => {
             </div>
             <div className="text-center -mt-2">
               <span className="text-black text-[13px]">
-                {certificateData.dateOfBirth}
+                {formatDate(certificateData?.dateOfBirth)}
               </span>
             </div>
 
@@ -217,7 +221,7 @@ const ExpatriatesMedicalCertificate = (props) => {
             </div>
             <div className="text-center ">
               <span className="text-black text-[12px]">
-                SPONSOR RENEWAL - LABOUR & MUNICIPALITY HELTH CARD
+                {certificateData?.category}
               </span>
             </div>
           </div>
@@ -226,17 +230,21 @@ const ExpatriatesMedicalCertificate = (props) => {
             <Field
               engName="Validity of the Medical"
               araName="صلاحية الفحص الطبي"
-              value="13-04-2025"
+              value={formatDate(certificateData?.ValidityoftheMedical)}
             />
-            <Field engName="To" araName="إلى" value="12-06-2025" />
+            <Field
+              engName="To"
+              araName="إلى"
+              value={formatDate(certificateData?.to)}
+            />
             <Field
               engName="Medical Center"
               araName="المركز الطبي"
-              value="SUNRISE MEDICAL CENTER LLC"
+              value={certificateData?.MedicalCenter}
             />
           </div>
           <div>
-            <MedicalStatusCard />
+            <MedicalStatusCard name={certificateData?.name} />
           </div>
         </div>
       </div>
