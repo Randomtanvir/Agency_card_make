@@ -5,6 +5,7 @@ const ApplicationSchema = new mongoose.Schema(
     applicationType: { type: String, required: true },
     applicationNumber: { type: String, required: true },
     name: { type: String, required: true },
+    arabicName: { type: String, required: true },
     dateOfBirth: { type: Date, required: true },
     nationality: { type: String, required: true },
     gender: { type: String, enum: ["MALE", "FEMALE", "OTHER"], required: true },

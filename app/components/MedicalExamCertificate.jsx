@@ -244,7 +244,10 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
             />
           </div>
           <div>
-            <MedicalStatusCard name={certificateData?.name} />
+            <MedicalStatusCard
+              name={certificateData?.name}
+              arabicName={certificateData?.arabicName}
+            />
           </div>
         </div>
       </div>
