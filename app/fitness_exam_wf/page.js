@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const page = () => {
+const FitnessPage = () => {
   return (
     <div className="container mx-auto">
       <div className="min-h-screen bg-white text-black flex flex-col">
@@ -43,4 +43,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default FitnessPage;
