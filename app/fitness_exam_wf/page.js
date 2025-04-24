@@ -9,7 +9,7 @@ const FitnessPage = () => {
           <div className="ml-4">My Blog</div>
           <div className="flex gap-6 mr-4">
             <Link href="#">Fitness_Exam_WF</Link>
-            <Link href="#">Sample Page one</Link>
+            <Link href="#">Sample Page</Link>
           </div>
         </div>
 
