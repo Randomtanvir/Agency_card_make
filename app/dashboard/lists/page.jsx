@@ -1,5 +1,4 @@
 import { getAllApplications } from "@/utils/fetcher";
-import Link from "next/link";
 import React from "react";
 import CertificateCard from "./_components/CertificateCard";
 

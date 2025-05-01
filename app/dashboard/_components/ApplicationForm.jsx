@@ -1,48 +1,88 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-export default function ApplicationForm() {
+import { useEffect } from "react";
+
+export default function ApplicationForm({ application }) {
   const router = useRouter();
+
   const {
     register,
     handleSubmit,
+    setValue,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      applicationType: "FOR VISA & RESIDENCY PURPOSE - RENEWAL",
-      applicationNumber: "SCW14023524192",
-      name: "MOHAMMAD MURSHEDUL ALAM",
-      arabicName: "محمد مرشديل عالم",
+      applicationType: "",
+      applicationNumber: "",
+      name: "",
+      arabicName: "",
       dateOfBirth: "1997-01-20",
       nationality: "BANGLADESH",
       gender: "MALE",
-      passportNo: "EM0565236",
-      civilNo: "130610975",
-      sponsor: "(415) شيخ الفتاح حل خطاط",
-      category: "SPONSOR RENEWAL - LABOUR & MUNICIPALITY HELTH CARD",
+      passportNo: "",
+      civilNo: "",
+      sponsor: "",
+      category: "",
       ValidityoftheMedical: "2025-04-13",
       to: "2025-06-12",
-      MedicalCenter: "SUNRISE MEDICAL CENTER LLC",
+      MedicalCenter: "",
     },
   });
 
+  // If in edit mode — prefill form values
+  useEffect(() => {
+    if (application) {
+      Object.keys(application).forEach((key) => {
+        setValue(key, application[key]);
+      });
+    }
+    if (application) {
+      Object.keys(application).forEach((key) => {
+        // If it's a date field — format to YYYY-MM-DD
+        if (
+          ["dateOfBirth", "ValidityoftheMedical", "to"].includes(key) &&
+          application[key]
+        ) {
+          const formattedDate = new Date(application[key])
+            .toISOString()
+            .split("T")[0];
+          setValue(key, formattedDate);
+        } else {
+          setValue(key, application[key]);
+        }
+      });
+    }
+  }, [application, setValue]);
+
   const onSubmit = async (data) => {
     try {
-      const res = await fetch("/api/application", {
-        method: "POST",
+      const method = application ? "PATCH" : "POST";
+      const url = application
+        ? `/api/application/${application.uniqueValue}`
+        : "/api/application";
+
+      const res = await fetch(url, {
+        method,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       });
 
       if (res.ok) {
-        const data = await res.json();
-        alert("Application submitted successfully ✅");
+        const result = await res.json();
+        alert(
+          application
+            ? "Application updated successfully ✅"
+            : "Application submitted successfully ✅"
+        );
         router.push("/dashboard/lists");
       } else {
         alert("Failed to submit application ❌");
       }
     } catch (error) {
-      return { message: error.message };
+      alert("Something went wrong ❌");
+      console.error(error);
     }
   };
 
@@ -50,7 +90,7 @@ export default function ApplicationForm() {
     { name: "applicationType", label: "Application Type" },
     { name: "applicationNumber", label: "Application Number" },
     { name: "name", label: "Name" },
-    { name: "arabicName", label: "arabicName" },
+    { name: "arabicName", label: "Arabic Name" },
     { name: "dateOfBirth", label: "Date of Birth", type: "date" },
     { name: "nationality", label: "Nationality" },
     { name: "gender", label: "Gender" },
@@ -93,7 +133,7 @@ export default function ApplicationForm() {
         type="submit"
         className="w-full bg-green-600 text-white py-2 px-4 rounded-md hover:bg-green-700 transition"
       >
-        Submit
+        {application ? "Update Application" : "Submit Application"}
       </button>
     </form>
   );
