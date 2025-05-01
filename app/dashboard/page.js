@@ -1,27 +1,37 @@
 import React from "react";
 import Link from "next/link";
+import { Plus, List, QrCode } from "lucide-react";
 
 const DashboardPage = () => {
   return (
-    <div className="flex flex-col gap-2 justify-center h-screen items-center">
-      <Link
-        className="text-sm bg-green-500 px-4 py-2 rounded-md text-white hover:bg-green-600"
-        href="/dashboard/add"
-      >
-        Add a Certificate
-      </Link>
-      <Link
-        className="text-sm bg-green-500 px-4 py-2 rounded-md text-white hover:bg-green-600"
-        href="/dashboard/lists"
-      >
-        Certificate list
-      </Link>
-      <Link
-        className="text-sm bg-green-500 px-4 py-2 rounded-md text-white hover:bg-green-600"
-        href="/qrcode-generate"
-      >
-        QRcodeGenerator
-      </Link>
+    <div className="flex flex-col gap-6 justify-center items-center h-screen bg-gray-50 px-4">
+      <h1 className="text-3xl font-bold text-gray-800 mb-8">Dashboard</h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-2xl">
+        <Link
+          href="/dashboard/add"
+          className="flex items-center gap-3 p-5 bg-green-500 text-white rounded-lg shadow hover:bg-green-600 transition"
+        >
+          <Plus className="w-5 h-5" />
+          <span className="text-base font-medium">Add a Certificate</span>
+        </Link>
+
+        <Link
+          href="/dashboard/lists"
+          className="flex items-center gap-3 p-5 bg-blue-500 text-white rounded-lg shadow hover:bg-blue-600 transition"
+        >
+          <List className="w-5 h-5" />
+          <span className="text-base font-medium">Certificate List</span>
+        </Link>
+
+        <Link
+          href="/qrcode-generate"
+          className="flex items-center gap-3 p-5 bg-purple-500 text-white rounded-lg shadow hover:bg-purple-600 transition"
+        >
+          <QrCode className="w-5 h-5" />
+          <span className="text-base font-medium">QR Code Generator</span>
+        </Link>
+      </div>
     </div>
   );
 };
