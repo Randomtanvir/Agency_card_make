@@ -3,7 +3,7 @@ import mongoose from "mongoose";
 const ApplicationSchema = new mongoose.Schema(
   {
     applicationType: { type: String, required: true },
-    applicationNumber: { type: String, required: true },
+    applicationNumber: { type: String },
     name: { type: String, required: true },
     arabicName: { type: String, required: true },
     dateOfBirth: { type: Date, required: true },
