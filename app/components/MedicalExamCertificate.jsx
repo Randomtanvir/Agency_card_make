@@ -39,7 +39,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
             <div className="absolute left-1/2 transform -translate-x-1/2">
               <div className="w-16 h-16 relative">
-                <Image
+                <img
                   className="mt-6"
                   src="/logo.png"
                   alt="logo"

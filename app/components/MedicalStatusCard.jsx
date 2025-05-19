@@ -19,7 +19,7 @@ export default function MedicalStatusCard({ name, arabicName }) {
 
       {/* Certificate Stamp */}
       <div className="mt-4">
-        <Image
+        <img
           width={200}
           height={200}
           src="/stamp.png"
