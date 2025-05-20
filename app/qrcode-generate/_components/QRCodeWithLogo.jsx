@@ -10,8 +10,8 @@ export default function StyledQRCode() {
 
   useEffect(() => {
     qrCode.current = new QRCodeStyling({
-      width: 250,
-      height: 250,
+      width: 1080,
+      height: 1080,
       margin: 5,
       // data: "https://example.com", // default data
       image: "/logo.png", // place logo in /public/logo.png
@@ -59,6 +59,9 @@ export default function StyledQRCode() {
     qrCode.current.download({
       name: "qr-code",
       extension: "png",
+      quality: 1.0,
+      width: 3840,
+      height: 3840,
     });
   };
 
