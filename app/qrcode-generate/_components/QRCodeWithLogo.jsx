@@ -27,7 +27,7 @@ export default function StyledQRCode() {
           type: "linear",
           rotation: 0,
           colorStops: [
-            { offset: 0, color: "#f02222" },
+            { offset: 0, color: "#bf2222" },
             { offset: 1, color: "#000000" },
           ],
         },
