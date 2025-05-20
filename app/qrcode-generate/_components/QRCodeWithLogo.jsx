@@ -10,26 +10,29 @@ export default function StyledQRCode() {
 
   useEffect(() => {
     qrCode.current = new QRCodeStyling({
-      width: 300,
-      height: 300,
-      margin: 1,
+      width: 250,
+      height: 250,
+      margin: 5,
       // data: "https://example.com", // default data
       image: "/logo.png", // place logo in /public/logo.png
       imageOptions: {
         crossOrigin: "anonymous",
-        imageSize: 0.25,
-        margin: 2,
+        imageSize: 0.6,
+        margin: 3,
       },
       dotsOptions: {
         type: "rounded",
+        
         gradient: {
           type: "linear",
           rotation: 0,
           colorStops: [
-            { offset: 0, color: "#e60000" },
+            { offset: 0, color: "#f02222" },
             { offset: 1, color: "#000000" },
           ],
         },
+
+      
       },
       cornersSquareOptions: {
         type: "extra-rounded",
