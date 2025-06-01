@@ -22,7 +22,7 @@ const FitnessPage = () => {
         <div className="flex justify-between p-8 border-t">
           {/* Left */}
           <div>
-            <h2 className="text-2xl font-bold">My Blog</h2>
+            <h2 className="text-2xl font-bold">My Blogs</h2>
             <p className="text-base mt-1">My WordPress Blog</p>
           </div>
 
