@@ -8,7 +8,7 @@ const FitnessPage = () => {
         <div className="flex justify-between items-center p-6 text-sm font-medium">
           <div className="ml-4">My Blog</div>
           <div className="flex gap-6 mr-4">
-            <Link href="#">Fitness_Exam_WF</Link>
+            <Link href="#">Fitness_Exam_WF_</Link>
             <Link href="#">Sample Page</Link>
           </div>
         </div>
