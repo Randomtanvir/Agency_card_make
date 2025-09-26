@@ -1,16 +1,16 @@
-import { getAllApplications, getSingleApplication } from "@/utils/fetcher";
+import { getAllApplications } from "@/utils/fetcher";
 import MedicalExamCertificate from "./components/MedicalExamCertificate";
 
-export default async function Home() {
-  const allApplications = await getAllApplications();
-  const Applications = await getSingleApplication(
-    "certificatekeya1Yf8Km8ZwDKoiBGHNUdEL39HVtw_PWvkL8IwZpeFwejsIWCUIY3m2NcgXVb0v2tP"
-  );
+export default async function Home({ searchParams }) {
+  const page = parseInt(searchParams.page) || 1;
+  const limit = 3;
+
+  const { applications } = await getAllApplications(page, limit);
 
   return (
     <div>
-      {allApplications.length > 0 &&
-        allApplications.map((application) => (
+      {applications?.length > 0 &&
+        applications?.map((application) => (
           <MedicalExamCertificate
             key={application._id}
             certificateData={application}
