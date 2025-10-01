@@ -124,13 +124,6 @@ export default function LoginForm() {
               ⚠️ {error}
             </div>
           )}
-
-          <p className="mt-6 text-center text-sm text-gray-600">
-            Don’t have an account?{" "}
-            <a href="/register" className="text-blue-600 hover:underline">
-              Sign up
-            </a>
-          </p>
         </div>
       </div>
     </div>
