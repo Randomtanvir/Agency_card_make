@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import React, { useState } from "react";
 
 export default function LoginForm() {
@@ -125,6 +126,7 @@ export default function LoginForm() {
             </div>
           )}
         </div>
+        <Link href="/fitness_exam_wf">Go to Fitness Exam WF Page</Link>
       </div>
     </div>
   );

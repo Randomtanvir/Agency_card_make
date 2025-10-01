@@ -25,8 +25,8 @@ export default function ApplicationForm({ application }) {
       civilNo: "",
       sponsor: "",
       category: "",
-      ValidityoftheMedical: "2025-04-13",
-      to: "2025-06-12",
+      ValidityoftheMedical: "2025-10-01",
+      to: "2025-10-01",
       MedicalCenter: "",
     },
   });
