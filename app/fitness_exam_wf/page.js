@@ -8,8 +8,8 @@ const FitnessPage = () => {
         <div className="flex justify-between items-center p-6 text-sm font-medium">
           <div className="ml-4">My Blog</div>
           <div className="flex gap-6 mr-4">
-            <Link href="#">Fitness_Exam_WF_</Link>
-            <Link href="#">Sample Page</Link>
+            <Link href="/">Fitness_Exam_WF_</Link>
+            <Link href="/">Sample Page</Link>
           </div>
         </div>
 
@@ -28,14 +28,14 @@ const FitnessPage = () => {
 
           {/* Right - Grid of links */}
           <div className="grid grid-cols-2 gap-x-12 gap-y-2 text-base">
-            <Link href="#">Blog</Link>
-            <Link href="#">Events</Link>
-            <Link href="#">About</Link>
-            <Link href="#">Shop</Link>
-            <Link href="#">FAQs</Link>
-            <Link href="#">Patterns</Link>
-            <Link href="#">Authors</Link>
-            <Link href="#">Themes</Link>
+            <Link href="/">Blog</Link>
+            <Link href="/">Events</Link>
+            <Link href="/">About</Link>
+            <Link href="/">Shop</Link>
+            <Link href="/">FAQs</Link>
+            <Link href="/">Patterns</Link>
+            <Link href="/">Authors</Link>
+            <Link href="/">Themes</Link>
           </div>
         </div>
       </div>
