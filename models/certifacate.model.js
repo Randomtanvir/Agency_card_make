@@ -17,6 +17,7 @@ const ApplicationSchema = new mongoose.Schema(
     to: { type: Date },
     MedicalCenter: { type: String },
     uniqueValue: { type: String, required: true, unique: true },
+    isFit: { type: String, required: false },
   },
   {
     timestamps: true, // adds createdAt & updatedAt fields

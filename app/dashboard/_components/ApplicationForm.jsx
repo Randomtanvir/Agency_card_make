@@ -28,6 +28,7 @@ export default function ApplicationForm({ application }) {
       ValidityoftheMedical: "2025-10-01",
       to: "2025-10-01",
       MedicalCenter: "",
+      isFit: "FIT",
     },
   });
 
@@ -105,6 +106,7 @@ export default function ApplicationForm({ application }) {
     },
     { name: "to", label: "To", type: "date" },
     { name: "MedicalCenter", label: "Medical Center" },
+    { name: "isFit", label: "Fit status" },
   ];
 
   return (

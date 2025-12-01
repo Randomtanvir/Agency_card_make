@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-export default function MedicalStatusCard({ name, arabicName }) {
+export default function MedicalStatusCard({ name, arabicName, isFit }) {
   return (
     <div className="max-w-md mx-auto border-[2px] border-[#EF4444] p-6 rounded-md text-center space-y-4">
       <div className="flex flex-col mt-8 mb-6 gap-4">
@@ -14,7 +14,7 @@ export default function MedicalStatusCard({ name, arabicName }) {
 
       {/* Status Box */}
       <div className="border border-dashed border-[#7A7A7A] text-[#61CE70] text-xl py-2 ">
-        FIT / لا ئق صحياً
+        {`${isFit || "FIT"} / لا ئق صحياً`}
       </div>
 
       {/* Certificate Stamp */}
