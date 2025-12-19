@@ -1,4 +1,4 @@
-import Image from "next/image";
+"use client";
 import React from "react";
 import Field from "./Field";
 import MedicalStatusCard from "./MedicalStatusCard";
@@ -24,36 +24,38 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
   return (
     <>
-      <div className="max-w-md mb-3 md:border mx-auto overflow-hidden font-sans">
+      <div className="max-w-md mb-3 font-[Montserrat] md:border mx-auto overflow-hidden">
         {/* Header */}
-        <div className="bg-white p-2 relative">
+        <div className="bg-white p-2 pt-10 relative">
           <div className="flex justify-between items-center">
             <div className="text-left">
-              <p className="text-[10px] font-semibold text-black">
-                Sultanate of Oman
-              </p>
-              <p className="text-[10px] font-semibold text-black">
-                Ministry of Health
-              </p>
+              <p className="text-[12px]  text-black">Sultanate of Oman</p>
+              <p className="text-[12px]  text-black">Ministry of Health</p>
             </div>
 
             <div className="absolute left-1/2 transform -translate-x-1/2">
               <div className="w-16 h-16 relative">
                 <img
                   className="mt-6"
-                  src="/logo.png"
+                  src="https://mfs.moh.gov.om-fitness.com/assets/uploads/logos/3.png"
                   alt="logo"
-                  width={50}
-                  height={50}
+                  width={60}
+                  height={60}
+                  onError={(e) => {
+                    e.currentTarget.src = "/logo.png";
+                  }}
                 />
               </div>
             </div>
 
-            <div className="text-right">
-              <p className="text-[10px] font-semibold text-black" dir="rtl">
+            <div className="text-right font-[Siwa-Regular]">
+              <p
+                className="text-[14px] font-[Siwa-Regular] font-semibold text-black"
+                dir="rtl"
+              >
                 سلطنة عُمان
               </p>
-              <p className="text-[10px] font-semibold text-black" dir="rtl">
+              <p className="text-[14px] font-semibold text-black" dir="rtl">
                 وزارة الصحة
               </p>
             </div>
@@ -61,10 +63,13 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
           {/* Certificate Title */}
           <div className="mt-10 text-center">
-            <h2 className="text-xl font-bold mb-1" dir="rtl">
+            <h2
+              className="text-[20px] text-black font-bold font-[Montserrat] mb-1"
+              dir="rtl"
+            >
               شهادة الفحص الطبي للوافدين
             </h2>
-            <h2 className="text-base mt-4 text-black font-semibold">
+            <h2 className="text-[20px] mt-1 text-black font-bold">
               Expatriates Medical Exam Certificate
             </h2>
           </div>
@@ -79,7 +84,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
           <div className="border border-black  rounded-lg p-3">
             <div className="flex justify-between">
               <span className="font-bold text-gray-900">Application Type:</span>
-              <span className="font-bold text-right" dir="rtl">
+              <span className=" text-right" dir="rtl">
                 نوع الطلب:
               </span>
             </div>
@@ -93,7 +98,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
               <span className="font-bold text-gray-900">
                 Application Number:
               </span>
-              <span className="font-bold text-right" dir="rtl">
+              <span className=" text-right" dir="rtl">
                 رقم الطلب:
               </span>
             </div>
@@ -108,7 +113,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
             {/* Name */}
             <div className="flex justify-between">
               <span className="font-bold text-[15px] text-gray-900">Name:</span>
-              <span className="font-bold text-right" dir="rtl">
+              <span className=" text-right" dir="rtl">
                 الاسم:
               </span>
             </div>
@@ -123,7 +128,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
               <span className="font-bold text-[15px] text-gray-900">
                 Date Of Birth:
               </span>
-              <span className="font-bold text-right" dir="rtl">
+              <span className=" text-right" dir="rtl">
                 تاريخ الميلاد:
               </span>
             </div>
@@ -138,7 +143,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
               <span className="font-bold text-[15px] text-gray-900">
                 Nationality:
               </span>
-              <span className="font-bold text-right" dir="rtl">
+              <span className="text-right" dir="rtl">
                 الجنسية:
               </span>
             </div>
@@ -153,7 +158,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
               <span className="font-bold text-[15px] text-gray-900">
                 Gender:
               </span>
-              <span className="font-bold text-right" dir="rtl">
+              <span className=" text-right" dir="rtl">
                 الجنس:
               </span>
             </div>
@@ -168,7 +173,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
               <span className="font-bold text-[15px] text-gray-900">
                 Passport No.:
               </span>
-              <span className="font-bold text-right" dir="rtl">
+              <span className=" text-right" dir="rtl">
                 رقم جواز السفر:
               </span>
             </div>
@@ -183,7 +188,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
               <span className="font-bold text-[15px] text-gray-900">
                 Civil No.:
               </span>
-              <span className="font-bold text-right" dir="rtl">
+              <span className="text-right" dir="rtl">
                 الرقم المدني:
               </span>
             </div>
@@ -199,7 +204,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
               <span className="font-bold text-[15px] text-gray-900">
                 Sponsor:
               </span>
-              <span className="font-bold text-right" dir="rtl">
+              <span className=" text-right" dir="rtl">
                 اسم الكفيل:
               </span>
             </div>
@@ -215,7 +220,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
               <span className="font-bold text-[15px] text-gray-900">
                 Category:
               </span>
-              <span className="font-bold text-right" dir="rtl">
+              <span className="text-right" dir="rtl">
                 الفئة:
               </span>
             </div>

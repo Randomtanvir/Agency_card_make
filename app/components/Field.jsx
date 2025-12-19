@@ -5,7 +5,7 @@ const Field = ({ engName = "", araName = "", value = "" }) => {
     <>
       <div className="flex justify-between">
         <span className="font-bold text-[14px] text-gray-900">{engName}:</span>
-        <span className="font-bold text-right" dir="rtl">
+        <span className=" text-right" dir="rtl">
           {araName}:
         </span>
       </div>
