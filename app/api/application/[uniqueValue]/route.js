@@ -7,6 +7,8 @@ export async function GET(_, { params }) {
 
   try {
     const { uniqueValue } = params;
+    console.log(uniqueValue, "try");
+    const value = encodeURIComponent(uniqueValue);
     const application = await Application.findOne({ uniqueValue });
     if (!application) {
       return NextResponse.json({ message: "Not found" }, { status: 404 });
@@ -17,7 +19,7 @@ export async function GET(_, { params }) {
     console.error("GET by uniqueValue error:", error);
     return NextResponse.json(
       { error: true, message: error.message || "Server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -27,6 +29,7 @@ export async function DELETE(_, { params }) {
 
   try {
     const { uniqueValue } = params;
+    console.log(uniqueValue, "DELETE-UNIKE");
 
     const deletedApp = await Application.findOneAndDelete({ uniqueValue });
 
@@ -36,13 +39,13 @@ export async function DELETE(_, { params }) {
 
     return NextResponse.json(
       { message: "Deleted successfully ✅", deletedApp },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error("DELETE error:", error);
     return NextResponse.json(
       { error: true, message: error.message || "Server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -58,7 +61,7 @@ export async function PATCH(request, { params }) {
     const updatedApp = await Application.findOneAndUpdate(
       { uniqueValue },
       { $set: updatedData },
-      { new: true }
+      { new: true },
     );
 
     if (!updatedApp) {
@@ -67,13 +70,13 @@ export async function PATCH(request, { params }) {
 
     return NextResponse.json(
       { message: "Updated successfully ✅", updatedApp },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error("PATCH error:", error);
     return NextResponse.json(
       { error: true, message: error.message || "Server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

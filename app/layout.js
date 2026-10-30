@@ -1,16 +1,17 @@
-import localFont from "next/font/local";
+import { Tajawal, Roboto } from "next/font/google";
 import "./globals.css";
 import connectMongo from "@/db/db";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const tajawal = Tajawal({
+  subsets: ["arabic", "latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-body",
+  display: "swap",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--font-roboto",
 });
 
 export const metadata = {
@@ -19,12 +20,11 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-  connectMongo();
+  await connectMongo();
+
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${tajawal.variable} ${roboto.variable} antialiased`}>
         {children}
       </body>
     </html>

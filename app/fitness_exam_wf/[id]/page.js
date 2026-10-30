@@ -12,8 +12,10 @@ export async function generateMetadata({ params }) {
 }
 
 // ✅ Page Component
-const SingleCertificatePage = async ({ params }) => {
-  const application = await getSingleApplication(params.id);
+const SingleCertificatePage = async ({ searchParams }) => {
+  const id = searchParams?.Key;
+
+  const application = await getSingleApplication(encodeURIComponent(id));
 
   return <MedicalExamCertificate certificateData={application} />;
 };

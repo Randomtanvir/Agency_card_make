@@ -7,7 +7,7 @@ export async function POST(req) {
   await connectMongo();
   try {
     const data = await req.json();
-    const token = generateSecureToken(64);
+    const token = generateSecureToken(115);
     const newApplication = new Application({
       ...data,
       uniqueValue: token,
@@ -21,7 +21,7 @@ export async function POST(req) {
         error: true,
         message: error.message || "Server error",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
@@ -58,13 +58,13 @@ export async function GET(request) {
           hasPrevPage: page > 1,
         },
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (error) {
     console.error("❌ Error fetching applications:", error);
     return NextResponse.json(
       { error: true, message: error.message || "Failed to fetch" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

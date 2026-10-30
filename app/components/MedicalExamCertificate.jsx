@@ -30,7 +30,8 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
       max-w-md
       md:max-w-none
       mb-3
-      font-[Montserrat]
+      
+      font-roboto
       md:border
       mx-auto
       overflow-hidden
@@ -61,7 +62,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
             <div className="text-right font-[Siwa-Regular]">
               <p
-                className="text-[14px] font-[Siwa-Regular] font-semibold text-black"
+                className="text-[14px] font-[Siwa-Regular] font-body font-semibold text-black"
                 dir="rtl"
               >
                 سلطنة عُمان
@@ -76,7 +77,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
           {/* Certificate Title */}
           <div className="mt-10 text-center">
             <h2
-              className="text-[20px] text-black font-bold font-[Montserrat] mb-1"
+              className="text-[20px] text-black  font-bold font-[Montserrat] mb-1"
               dir="rtl"
             >
               شهادة الفحص الطبي للوافدين
@@ -96,9 +97,14 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
           {/* Application Type */}
           <div className="border border-black rounded-lg p-3">
             <div className="flex justify-between">
-              <span className="font-bold text-gray-900">Application Type:</span>
+              <span className="font-bold font-roboto text-gray-900">
+                Application Type:
+              </span>
 
-              <span className="text-right" dir="rtl">
+              <span
+                className="text-right font-body text-[13px] font-semibold"
+                dir="rtl"
+              >
                 نوع الطلب:
               </span>
             </div>
@@ -110,11 +116,14 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
             </div>
 
             <div className="flex justify-between">
-              <span className="font-bold text-gray-900">
+              <span className="font-bold font-roboto text-gray-900">
                 Application Number:
               </span>
 
-              <span className="text-right" dir="rtl">
+              <span
+                className="text-right font-body text-[13px] font-semibold"
+                dir="rtl"
+              >
                 رقم الطلب:
               </span>
             </div>
@@ -130,9 +139,14 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
           <div className="border border-black rounded-lg p-3">
             {/* Name */}
             <div className="flex justify-between">
-              <span className="font-bold text-[15px] text-gray-900">Name:</span>
+              <span className="font-bold text-[15px] font-roboto text-gray-900">
+                Name:
+              </span>
 
-              <span className="text-right" dir="rtl">
+              <span
+                className="text-right font-body text-[13px] font-semibold"
+                dir="rtl"
+              >
                 الاسم:
               </span>
             </div>
@@ -145,11 +159,14 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
             {/* Date Of Birth */}
             <div className="flex justify-between mt-3">
-              <span className="font-bold text-[15px] text-gray-900">
+              <span className="font-bold text-[15px] font-roboto text-gray-900">
                 Date Of Birth:
               </span>
 
-              <span className="text-right" dir="rtl">
+              <span
+                className="text-right font-body text-[13px] font-semibold"
+                dir="rtl"
+              >
                 تاريخ الميلاد:
               </span>
             </div>
@@ -162,11 +179,14 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
             {/* Nationality */}
             <div className="flex justify-between mt-3">
-              <span className="font-bold text-[15px] text-gray-900">
+              <span className="font-bold text-[15px] font-roboto text-gray-900">
                 Nationality:
               </span>
 
-              <span className="text-right" dir="rtl">
+              <span
+                className="text-right font-body text-[13px] font-semibold"
+                dir="rtl"
+              >
                 الجنسية:
               </span>
             </div>
@@ -179,11 +199,14 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
             {/* Gender */}
             <div className="flex justify-between mt-3">
-              <span className="font-bold text-[15px] text-gray-900">
+              <span className="font-bold text-[15px] font-roboto text-gray-900">
                 Gender:
               </span>
 
-              <span className="text-right" dir="rtl">
+              <span
+                className="text-right font-body text-[13px] font-semibold"
+                dir="rtl"
+              >
                 الجنس:
               </span>
             </div>
@@ -196,11 +219,14 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
             {/* Passport */}
             <div className="flex justify-between mt-3">
-              <span className="font-bold text-[15px] text-gray-900">
+              <span className="font-bold font-roboto text-[15px] text-gray-900">
                 Passport No.:
               </span>
 
-              <span className="text-right" dir="rtl">
+              <span
+                className="text-right font-body text-[13px] font-semibold"
+                dir="rtl"
+              >
                 رقم جواز السفر:
               </span>
             </div>
@@ -213,11 +239,14 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
             {/* Civil */}
             <div className="flex justify-between mt-3">
-              <span className="font-bold text-[15px] text-gray-900">
+              <span className="font-bold font-roboto text-[15px] text-gray-900">
                 Civil No.:
               </span>
 
-              <span className="text-right" dir="rtl">
+              <span
+                className="text-right font-body text-[13px] font-semibold"
+                dir="rtl"
+              >
                 الرقم المدني:
               </span>
             </div>
@@ -230,11 +259,14 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
             {/* Sponsor */}
             <div className="flex justify-between mt-3">
-              <span className="font-bold text-[15px] text-gray-900">
+              <span className="font-bold font-roboto text-[15px] text-gray-900">
                 Sponsor:
               </span>
 
-              <span className="text-right" dir="rtl">
+              <span
+                className="text-right font-body text-[13px] font-semibold"
+                dir="rtl"
+              >
                 اسم الكفيل:
               </span>
             </div>
@@ -247,11 +279,14 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
 
             {/* Category */}
             <div className="flex justify-between mt-3">
-              <span className="font-bold text-[15px] text-gray-900">
+              <span className="font-bold font-roboto text-[15px] text-gray-900">
                 Category:
               </span>
 
-              <span className="text-right" dir="rtl">
+              <span
+                className="text-right font-body text-[13px] font-semibold"
+                dir="rtl"
+              >
                 الفئة:
               </span>
             </div>
@@ -264,7 +299,7 @@ const ExpatriatesMedicalCertificate = ({ certificateData }) => {
           </div>
 
           {/* Expired Information */}
-          <div className="border border-black rounded-lg p-3">
+          <div className="border border-black font-body text-[13px] font-semibold rounded-lg p-3">
             <Field
               engName="Validity of the Medical"
               araName="صلاحية الفحص الطبي"

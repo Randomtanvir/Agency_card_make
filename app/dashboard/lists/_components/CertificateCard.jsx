@@ -8,11 +8,16 @@ const CertificateCard = ({ application }) => {
   const router = useRouter();
 
   const handleDelete = async (value) => {
+    console.log(value, "VALUE FOR DELETE");
+
     if (confirm("Are you sure you want to delete this item?")) {
       try {
-        const res = await fetch(`/api/application/${value}`, {
-          method: "DELETE",
-        });
+        const res = await fetch(
+          `/api/application/${encodeURIComponent(value)}`,
+          {
+            method: "DELETE",
+          },
+        );
 
         const data = await res.json();
 
@@ -37,7 +42,9 @@ const CertificateCard = ({ application }) => {
       <div className="p-4 w-full max-w-xl border rounded-lg shadow flex justify-between items-center bg-white hover:shadow-lg transition">
         <div>
           <Link
-            href={`/fitness_exam_wf/${application?.uniqueValue}`}
+            href={`/Fitness_Exam_WF/Certificate?Key=${encodeURIComponent(
+              application?.uniqueValue,
+            )}&FitnessExamId=0`}
             className="text-lg font-semibold text-blue-600 hover:underline"
           >
             {application.name}

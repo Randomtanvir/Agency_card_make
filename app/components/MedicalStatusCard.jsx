@@ -22,9 +22,9 @@ export default function MedicalStatusCard({ name, arabicName, isFit }) {
         <h2 className="text-black font-bold">{name}</h2>
 
         <div className="flex justify-between text-black font-bold">
-          <h3>Medical Status</h3>
+          <h3 className="font-roboto">Medical Status</h3>
 
-          <h3>الحالة الطبیة</h3>
+          <h3 className="font-roboto">الحالة الطبیة</h3>
         </div>
       </div>
 
